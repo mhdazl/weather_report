@@ -14,13 +14,13 @@ function Report() {
   // Function for handling city input changes by user
   const handleInputChange = (e) => {
     setCity(e.target.value);
-    setData();
     setError();
   };
 
   // Getting weather reports
   const getData = async () => {
     setLoading(true);
+    setData();
     await axios
       .get(`http://localhost:8000/api/get_report/${city}`)
       .then((response) => {
